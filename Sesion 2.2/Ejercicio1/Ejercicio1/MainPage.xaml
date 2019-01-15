@@ -5,10 +5,6 @@
              x:Class="Ejercicio1.MainPage">
 
     <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
         <Editor Placeholder="Ingrese una dirección URL aquí" x:Name="urlText" />
         <Button Text="Ir" Clicked="Button_Clicked" />
     </StackLayout>

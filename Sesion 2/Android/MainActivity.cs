@@ -14,7 +14,10 @@ using Android.Content.PM;
 namespace WorkingWithMaps.Android
 {
 
-	[Activity (Label = "WorkingWithMaps.Android.Android", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, 
+	[Activity (Label = "WorkingWithMaps.Android.Android", 
+        Icon = "@drawable/icon", 
+        Theme = "@style/MainTheme", 
+        MainLauncher = true, 
 		ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
 	public class MainActivity : 
 	global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity // superclass new in 1.3
