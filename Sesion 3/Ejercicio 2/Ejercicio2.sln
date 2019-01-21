@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio2.Android", "Ejercicio1\Ejercicio1.Android\Ejercicio2.Android.csproj", "{F61959A7-ED2E-4F3F-94C3-E7097B0A08C9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio2.Android", "Ejercicio2\Ejercicio2.Android\Ejercicio2.Android.csproj", "{F61959A7-ED2E-4F3F-94C3-E7097B0A08C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio2.iOS", "Ejercicio1\Ejercicio1.iOS\Ejercicio2.iOS.csproj", "{FB1D0FFA-D434-4E4F-88ED-346A8BA8BCC5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio2.iOS", "Ejercicio2\Ejercicio2.iOS\Ejercicio2.iOS.csproj", "{FB1D0FFA-D434-4E4F-88ED-346A8BA8BCC5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejercicio2", "Ejercicio1\Ejercicio1\Ejercicio2.csproj", "{86EA8749-E18D-4A7D-8E9E-BF24B4F7CD29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejercicio2", "Ejercicio2\Ejercicio2\Ejercicio2.csproj", "{86EA8749-E18D-4A7D-8E9E-BF24B4F7CD29}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
