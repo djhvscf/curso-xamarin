@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Ejercicio2.Droid;
 
 namespace Ejercicio2.Droid
 {
