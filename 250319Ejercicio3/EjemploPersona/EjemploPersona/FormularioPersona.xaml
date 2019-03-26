@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EjemploPersona.FormularioPersona">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Nombre"></Label>
+            <Entry Text="{Binding Nombre}"></Entry>
+            <Label Text="Apellido"></Label>
+            <Entry Text="{Binding Apellido}"></Entry>
+            <Label Text="Año de nacimiento"></Label>
+            <Entry Text="{Binding AnnoNacimiento}" x:Name="AnnoNacimiento"></Entry>
+            <Label Text="Direccion"></Label>
+            <Editor Text="{Binding Direccion}"></Editor>
+            <Label Text="Edad"></Label>
+            <Entry x:Name="Edad" Text="{Binding Edad}" IsEnabled="False"></Entry>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
