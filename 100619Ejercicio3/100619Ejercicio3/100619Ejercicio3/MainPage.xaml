@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="_100619Ejercicio3.MainPage">
+
+    <StackLayout>
+        <ListView x:Name="listView"
+			  ItemsSource="{Binding Monkeys}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}" Detail="{Binding Description}">
+                        <TextCell.ContextActions>
+                            <MenuItem Clicked="OnMore" CommandParameter="{Binding .}" Text="Más" />
+                            <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}" Text="Eliminar" IsDestructive="True" />
+                        </TextCell.ContextActions>
+                    </TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
