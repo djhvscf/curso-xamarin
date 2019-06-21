@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AgendaContacto.Views.LoginPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="10">
+                <Label HeightRequest="110"
+                       HorizontalOptions="FillAndExpand"
+                       Text="Agenda Contacto"
+                       FontSize="40"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"/>
+
+                <Entry Margin="20, 40, 20, 0"
+                       HeightRequest="50"
+                       Placeholder="Nombre de Usuario"
+                       x:Name="txtNombreUsuario"/>
+
+                <Entry Margin="20, 0, 20, 0"
+                       HeightRequest="50"
+                       Placeholder="Contraseña"
+                       IsPassword="True"
+                       x:Name="txtContrasenna"/>
+
+
+                <Button Margin="20, 0, 20, 0"
+                        HeightRequest="50"
+                        TextColor="White"
+                        Text="Login"
+                        BackgroundColor="DarkBlue"
+                        HorizontalOptions="FillAndExpand"
+                        Clicked="Button_Clicked">
+                </Button>
+
+                <Button Margin="20, 0, 20, 0"
+                        HeightRequest="50"
+                        TextColor="White"
+                        Text="Registrar"
+                        BackgroundColor="Gray"
+                        HorizontalOptions="FillAndExpand">
+                </Button>
+
+                <Label Text="Olvidó su contraseña?"
+                       HorizontalOptions="Center"
+                       TextColor="DarkBlue"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
