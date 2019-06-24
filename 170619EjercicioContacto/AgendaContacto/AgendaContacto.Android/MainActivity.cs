@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Plugin.LocalNotifications;
 
 namespace AgendaContacto.Droid
 {
@@ -19,6 +20,7 @@ namespace AgendaContacto.Droid
 
             base.OnCreate(savedInstanceState);
 
+            LocalNotificationsImplementation.NotificationIconId = Resource.Mipmap.icon;
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());

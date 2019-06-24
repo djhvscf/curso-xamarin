@@ -1,4 +1,5 @@
 ﻿using AgendaContacto.Model;
+using Plugin.LocalNotifications;
 using System;
 
 using Xamarin.Forms;
@@ -27,6 +28,10 @@ namespace AgendaContacto.Views
             };
 
             MessagingCenter.Send(this, "AgregarContacto", contacto);
+            CrossLocalNotifications.Current.Show($"Llamar al contacto",
+                $"Recuerde llamar a {contacto.Nombre}. Tel: {contacto.Telefono}",
+                0,
+                DateTime.Now.AddSeconds(15));
             await Navigation.PopAsync();
         }
     }
