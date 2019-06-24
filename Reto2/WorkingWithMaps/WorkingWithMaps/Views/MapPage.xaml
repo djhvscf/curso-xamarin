@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WorkingWithMaps.Views.MapPage"
+             xmlns:XamarinMaps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps">
+    <ContentPage.Content>
+        <StackLayout Spacing="0">
+            <XamarinMaps:Map x:Name="miMapa" HeightRequest="100" WidthRequest="960" VerticalOptions="FillAndExpand"/>
+            <Slider Maximum="18" Minimum="1" Value="1" ValueChanged="Slider_ValueChanged"/>
+            <StackLayout Spacing="30" HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                <Button Text="Street" Clicked="HandleClicked"></Button>
+                <Button Text="Hybrid" Clicked="HandleClicked"></Button>
+                <Button Text="Satellite" Clicked="HandleClicked"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

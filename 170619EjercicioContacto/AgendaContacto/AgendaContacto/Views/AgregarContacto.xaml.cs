@@ -1,9 +1,5 @@
 ﻿using AgendaContacto.Model;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -18,7 +14,7 @@ namespace AgendaContacto.Views
             InitializeComponent();
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void Button_Clicked(object sender, EventArgs e)
         {
             //Agregar validaciones correspondientes
             // 1.Campos no vacios
@@ -30,7 +26,8 @@ namespace AgendaContacto.Views
                 Direccion = txtDireccion.Text
             };
 
-            //Agregarlo a la lista de contactos
+            MessagingCenter.Send(this, "AgregarContacto", contacto);
+            await Navigation.PopAsync();
         }
     }
 }

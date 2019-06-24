@@ -5,6 +5,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="AgendaContacto.Views.AgregarContacto">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Guardar" Clicked="Button_Clicked" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Nombre" FontSize="Large"/>
@@ -13,9 +16,6 @@
             <Entry x:Name="txtTelefono"></Entry>
             <Label Text="Direccion" FontSize="Default"/>
             <Editor x:Name="txtDireccion"></Editor>
-
-            <Button Text="Agregar" Clicked="Button_Clicked"/>
-            <Button Text="Cancelar"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

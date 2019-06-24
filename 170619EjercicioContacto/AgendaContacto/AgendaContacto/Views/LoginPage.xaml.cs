@@ -26,7 +26,7 @@ namespace AgendaContacto.Views
             }
             else
             {
-                // Mostrar alert
+                DisplayAlert("Datos incorrectos", "El nombre de usuario o contraseña es incorrecto", "Ok");
             }
         }
     }

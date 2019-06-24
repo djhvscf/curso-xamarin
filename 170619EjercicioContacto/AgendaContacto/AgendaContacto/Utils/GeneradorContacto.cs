@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 
 namespace AgendaContacto.Utils
 {
@@ -17,7 +18,7 @@ namespace AgendaContacto.Utils
             "Montemagno", "Orozco", "Volio", "Conejo"
         };
 
-        public static ObservableCollection<Contacto> CrearContactos()
+        public static Task<ObservableCollection<Contacto>> CrearContactos()
         {
             var random = new Random();
             var contactos = new ObservableCollection<Contacto>();
@@ -35,7 +36,7 @@ namespace AgendaContacto.Utils
                 contactos.Add(contacto);
             }
 
-            return contactos;
+            return Task.FromResult(contactos);
         }
     }
 }

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WorkingWithMaps.Views.MapAppPage">
+    <ContentPage.Content>
+        <StackLayout Padding="5,20,5,0" HorizontalOptions="Fill">
+            <Label Text="Estos botones salen de la aplicación y abren la aplicación de mapas"></Label>
+            <Button Text="Abrir ubicación en la aplicación de mapas" Clicked="OpenLocation_Clicked"/>
+            <Button Text="Obtener direcciones usando la aplicación de mapas" Clicked="OpenDirections_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
