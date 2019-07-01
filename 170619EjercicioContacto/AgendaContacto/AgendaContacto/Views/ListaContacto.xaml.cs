@@ -1,4 +1,5 @@
-﻿using AgendaContacto.Utils;
+﻿using AgendaContacto.Model;
+using AgendaContacto.Utils;
 using AgendaContacto.ViewModel;
 using System;
 using System.Collections.Generic;

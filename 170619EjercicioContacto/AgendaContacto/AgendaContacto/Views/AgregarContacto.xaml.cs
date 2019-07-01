@@ -31,7 +31,7 @@ namespace AgendaContacto.Views
             CrossLocalNotifications.Current.Show($"Llamar al contacto",
                 $"Recuerde llamar a {contacto.Nombre}. Tel: {contacto.Telefono}",
                 0,
-                DateTime.Now.AddSeconds(15));
+                DateTime.Now.AddSeconds(5));
             await Navigation.PopAsync();
         }
     }
