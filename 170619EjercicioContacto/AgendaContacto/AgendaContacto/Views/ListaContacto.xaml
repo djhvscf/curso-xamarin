@@ -5,15 +5,21 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="AgendaContacto.Views.ListaContacto">
+    <ContentPage.Resources>
+        <Style>
+
+        </Style>
+    </ContentPage.Resources>
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Agregar" Clicked="Add_Clicked"/>
+        <ToolbarItem Text="Cambiar tema" Clicked="ToolbarItem_Clicked"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
             <ListView 
                 x:Name="listaContactos" 
                 ItemsSource="{Binding Contactos}"
-                BackgroundColor="White"
+                BackgroundColor="{DynamicResource listViewBackground}"
                 VerticalOptions="FillAndExpand"
                 ItemSelected="ListaContactos_ItemSelected"
                 IsPullToRefreshEnabled="true"

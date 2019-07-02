@@ -47,5 +47,19 @@ namespace AgendaContacto.Views
         {
             listaContactos.IsRefreshing = this.IsBusy;
         }
+
+        private void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+            List<Color> colors = new List<Color>()
+            {
+                Color.Red,
+                Color.Purple,
+                Color.RoyalBlue,
+                Color.Cyan
+            };
+
+            Random r = new Random();
+            this.Resources["listViewBackground"] = colors[r.Next(colors.Count - 1)];
+        }
     }
 }
