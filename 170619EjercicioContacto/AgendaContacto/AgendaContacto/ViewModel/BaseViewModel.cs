@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AgendaContacto.DataAccess.Repositorios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -8,6 +9,7 @@ namespace AgendaContacto.ViewModel
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
+        public IContactoRepository contactoRepository;
         private bool isBusy = false;
         public bool IsBusy
         {

@@ -1,13 +1,16 @@
 ﻿using System;
 using System.IO;
 using AgendaContacto.DataAccess;
+using AgendaContacto.iOS;
 using SQLite;
+using Xamarin.Forms;
 
+[assembly: Dependency(typeof(SQLConnection))]
 namespace AgendaContacto.iOS
 {
     public class SQLConnection : ISQLConnection
     {
-        public SQLiteConnection GetConnection()
+        public SQLiteAsyncConnection GetConnection()
         {
             var docsPath = System.Environment.GetFolderPath(
                 Environment.SpecialFolder.Personal);
@@ -16,6 +19,6 @@ namespace AgendaContacto.iOS
 
             var path = Path.Combine(libsPath, "agendacontacto.db3");
 
-            return new SQLiteConnection(path);       }
+            return new SQLiteAsyncConnection(path);       }
     }
 }

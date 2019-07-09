@@ -5,11 +5,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="AgendaContacto.Views.ListaContacto">
-    <ContentPage.Resources>
-        <Style>
-
-        </Style>
-    </ContentPage.Resources>
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Agregar" Clicked="Add_Clicked"/>
         <ToolbarItem Text="Cambiar tema" Clicked="ToolbarItem_Clicked"/>
@@ -32,6 +27,10 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Clicked="Elimnar_Clicked" CommandParameter="{Binding .}"
+                                          Text="Eliminar"/>
+                            </ViewCell.ContextActions>
                             <Frame Padding="0" Margin="5" HasShadow="True" CornerRadius="0">
                                 <StackLayout Orientation="Horizontal" Margin="0" Padding="0">
                                     <BoxView Color="DarkBlue" WidthRequest="4" Margin="0" />

@@ -1,4 +1,5 @@
-﻿using AgendaContacto.Views;
+﻿using AgendaContacto.DataAccess;
+using AgendaContacto.Views;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -10,7 +11,6 @@ namespace AgendaContacto
         public App()
         {
             InitializeComponent();
-
             MainPage = new NavigationPage(new LoginPage());
         }
 

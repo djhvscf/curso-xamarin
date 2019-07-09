@@ -1,11 +1,7 @@
 ﻿using AgendaContacto.Model;
-using AgendaContacto.Utils;
 using AgendaContacto.ViewModel;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -60,6 +56,12 @@ namespace AgendaContacto.Views
 
             Random r = new Random();
             this.Resources["listViewBackground"] = colors[r.Next(colors.Count - 1)];
+        }
+
+        private void Elimnar_Clicked(object sender, EventArgs e)
+        {
+            var contacto = ((MenuItem)sender).CommandParameter as Contacto;
+            MessagingCenter.Send(this, "EliminarContacto", contacto);
         }
     }
 }
