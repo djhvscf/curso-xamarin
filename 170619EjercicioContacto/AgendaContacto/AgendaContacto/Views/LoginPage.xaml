@@ -13,18 +13,21 @@
                        Text="Agenda Contacto"
                        FontSize="40"
                        HorizontalTextAlignment="Center"
-                       VerticalTextAlignment="Center"/>
+                       VerticalTextAlignment="Center"
+                       AutomationId="NombreUsuarioLbl"/>
 
                 <Entry Margin="20, 40, 20, 0"
                        HeightRequest="50"
                        Placeholder="Nombre de Usuario"
-                       x:Name="txtNombreUsuario"/>
+                       x:Name="txtNombreUsuario"
+                       AutomationId="NombreUsuario"/>
 
                 <Entry Margin="20, 0, 20, 0"
                        HeightRequest="50"
                        Placeholder="Contraseña"
                        IsPassword="True"
-                       x:Name="txtContrasenna"/>
+                       x:Name="txtContrasenna"
+                       AutomationId="Contrasenna"/>
 
 
                 <Button Margin="20, 0, 20, 0"
@@ -33,7 +36,8 @@
                         Text="Login"
                         BackgroundColor="DarkBlue"
                         HorizontalOptions="FillAndExpand"
-                        Clicked="Button_Clicked">
+                        Clicked="Button_Clicked"
+                        AutomationId="BtnLogin">
                 </Button>
 
                 <Button Margin="20, 0, 20, 0"
