@@ -13,6 +13,9 @@ using System.Linq;
 using System.Reflection;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 namespace AgendaContacto
 {
@@ -26,6 +29,14 @@ namespace AgendaContacto
             InitializeComponent();
             MainPage = new NavigationPage(new LoginPage());
             DependencyResolver.ResolveUsing(type => Container.IsRegistered(type) ? Container.Resolve(type) : null);
+        }
+
+        protected override void OnStart()
+        {
+            AppCenter.Start("android=66fa2b52-73cc-4cb7-b889-fc28770d1f91;" +
+                  "uwp={Your UWP App secret here};" +
+                  "ios={Your iOS App secret here}",
+                  typeof(Analytics), typeof(Crashes));
         }
 
         public static void RegisterType<T>() where T : class
