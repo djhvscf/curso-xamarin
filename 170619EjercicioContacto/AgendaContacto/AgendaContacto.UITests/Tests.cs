@@ -14,6 +14,8 @@ namespace AgendaContacto.UITests
         IApp app;
         Platform platform;
 
+        static readonly Func<AppQuery, AppQuery> InitialMessage = c => c.Marked("NombreUsuarioLbl").Text("Agenda Contacto");
+
         public Tests(Platform platform)
         {
             this.platform = platform;
@@ -26,12 +28,23 @@ namespace AgendaContacto.UITests
         }
 
         [Test]
-        public void WelcomeTextIsDisplayed()
+        public void AppLaunches()
         {
-            AppResult[] results = app.WaitForElement(c => c.Marked("Welcome to Xamarin.Forms!"));
-            app.Screenshot("Welcome screen.");
+#if DEBUG
+            // The following method will trap the UI test into REPL tool window CLI
+            app.Repl();
+            // if you want to quit the REPL tool, type quit at the REPL prompt
+#endif
+            // Arrange - Nothing to do because the queries have already been initialized.
+            AppResult[] result = app.Query(InitialMessage);
+            Assert.IsTrue(result.Any(), "The initial message string isn't correct - maybe the app wasn't re-started?");
 
-            Assert.IsTrue(results.Any());
+            // Act
+            //app.Tap(Button);
+
+            // Assert
+            //result = app.Query(DoneMessage);
+            //Assert.IsTrue(result.Any(), "The 'clicked' message is not being displayed.");
         }
     }
 }
