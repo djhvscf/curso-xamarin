@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
+﻿using AgendaContacto.DataAccess;
 using Foundation;
 using UIKit;
 using UserNotifications;
@@ -41,9 +38,16 @@ namespace AgendaContacto.iOS
             }
 
             global::Xamarin.Forms.Forms.Init();
+            RegisterTypes();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
+        }
+
+        private void RegisterTypes()
+        {
+            App.RegisterType<ISQLConnection, SQLConnection>();
+            App.BuildContainer();
         }
     }
 }

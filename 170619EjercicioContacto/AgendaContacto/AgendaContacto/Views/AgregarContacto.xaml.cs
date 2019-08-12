@@ -27,7 +27,7 @@ namespace AgendaContacto.Views
                 Direccion = txtDireccion.Text
             };
 
-            MessagingCenter.Send(this, "AgregarContacto", contacto);
+            MessagingCenter.Send(this, MessageKeys.AgregarContacto, contacto);
             CrossLocalNotifications.Current.Show($"Llamar al contacto",
                 $"Recuerde llamar a {contacto.Nombre}. Tel: {contacto.Telefono}",
                 0,

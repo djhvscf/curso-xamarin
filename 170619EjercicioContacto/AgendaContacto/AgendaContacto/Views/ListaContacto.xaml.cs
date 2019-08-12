@@ -1,5 +1,6 @@
 ﻿using AgendaContacto.Model;
 using AgendaContacto.ViewModel;
+using Autofac;
 using System;
 using System.Collections.Generic;
 
@@ -16,7 +17,7 @@ namespace AgendaContacto.Views
         public ListaContacto()
         {
             InitializeComponent();
-            BindingContext = viewModel = new ContactoViewModel();
+            BindingContext = viewModel = App.Container.Resolve<ContactoViewModel>();
         }
 
         private void Add_Clicked(object sender, EventArgs e)
@@ -61,7 +62,7 @@ namespace AgendaContacto.Views
         private void Elimnar_Clicked(object sender, EventArgs e)
         {
             var contacto = ((MenuItem)sender).CommandParameter as Contacto;
-            MessagingCenter.Send(this, "EliminarContacto", contacto);
+            MessagingCenter.Send(this, MessageKeys.EliminarContacto, contacto);
         }
     }
 }

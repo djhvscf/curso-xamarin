@@ -1,12 +1,8 @@
-﻿using AgendaContacto.DataAccess;
-using AgendaContacto.DataAccess.Repositorios;
+﻿using AgendaContacto.DataAccess.Servicios;
 using AgendaContacto.Model;
-using AgendaContacto.Utils;
 using AgendaContacto.Views;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -17,23 +13,25 @@ namespace AgendaContacto.ViewModel
         public ObservableCollection<Contacto> Contactos { get; set; }
         public Command CargarContactosCommand { get; set; }
 
-        public ContactoViewModel()
+        private readonly IContactoService service;
+
+        public ContactoViewModel(IContactoService service)
         {
+            this.service = service;
             Contactos = new ObservableCollection<Contacto>();
             CargarContactosCommand = new Command(async () => await ExecuteLoadItemsCommand());
-            contactoRepository = new ContactoRepository();
 
-            MessagingCenter.Subscribe<AgregarContacto, Contacto>(this, "AgregarContacto", async (obj, contacto) =>
+            MessagingCenter.Subscribe<AgregarContacto, Contacto>(this, MessageKeys.AgregarContacto, async (obj, contacto) =>
             {
                 var _contacto = contacto as Contacto;
-                contactoRepository.AgregarContacto(_contacto);
+                this.service.AgregarContacto(_contacto);
                 CargarContactosCommand.Execute(null);
             });
 
-            MessagingCenter.Subscribe<ListaContacto, Contacto>(this, "EliminarContacto", async (obj, contacto) =>
+            MessagingCenter.Subscribe<ListaContacto, Contacto>(this, MessageKeys.EliminarContacto, async (obj, contacto) =>
             {
                 var _contacto = contacto as Contacto;
-                contactoRepository.EliminarContacto(_contacto);
+                this.service.EliminarContacto(_contacto);
                 CargarContactosCommand.Execute(null);
             });
         }
@@ -50,7 +48,7 @@ namespace AgendaContacto.ViewModel
             try
             {
                 Contactos.Clear();
-                var items = await contactoRepository.ObtenerContactos();
+                var items = await this.service.ObtenerContactos();
                 foreach (var item in items)
                 {
                     Contactos.Add(item);

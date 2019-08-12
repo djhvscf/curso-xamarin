@@ -9,8 +9,8 @@ namespace AgendaContacto.ViewModel
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IContactoRepository contactoRepository;
         private bool isBusy = false;
+
         public bool IsBusy
         {
             get { return isBusy; }
