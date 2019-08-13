@@ -19,7 +19,16 @@ namespace AgendaContacto.DataAccess.Servicios
 
         public async Task<IEnumerable<Contacto>> ObtenerContactos()
         {
-            return await Task.FromResult(new List<Contacto>());
+            return await Task.FromResult(new List<Contacto>()
+            {
+                new Contacto()
+                {
+                    Nombre = "Unit Test",
+                    Direccion = "Unit Test Dir",
+                    Telefono = "89654120",
+                    Id = int.MaxValue
+                }
+            });
         }
     }
 }

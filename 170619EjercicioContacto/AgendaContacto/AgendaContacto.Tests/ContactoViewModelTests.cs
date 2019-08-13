@@ -7,18 +7,15 @@ namespace AgendaContacto.Tests
     public class ContactoViewModelTests
     {
         [Fact]
-        public void CargarContactosCommandIsNotNullTest()
+        public void ContactosPropertyIsNotNullWhenViewModelInstantiatedTest()
         {
+            // Arrange
             var contactoMockService = new ContactoMockService();
-            var contactoViewModel = new ContactoViewModel(contactoMockService);
-            Assert.NotNull(contactoViewModel.CargarContactosCommand);
-        }
 
-        [Fact]
-        public void ContactosPropertyIsNullWhenViewModelInstantiatedTest()
-        {
-            var contactoMockService = new ContactoMockService();
+            // Act
             var contactoViewModel = new ContactoViewModel(contactoMockService);
+
+            // Assert
             Assert.NotNull(contactoViewModel.Contactos);
         }
 
