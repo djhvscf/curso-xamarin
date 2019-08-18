@@ -8,6 +8,7 @@ using Xamarin.Forms;
 
 namespace AgendaContacto.ViewModel
 {
+    [Preserve]
     public class ContactoViewModel : BaseViewModel
     {
         public ObservableCollection<Contacto> Contactos { get; set; }
